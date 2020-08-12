@@ -11,6 +11,8 @@ jobs:
           name: Test and build
           command: |
             bash ./scripts/build.sh $CIRCLE_SHA1
+
+
       - store_artifacts:
           path: artifacts
 
@@ -18,6 +20,7 @@ jobs:
           root: artifacts
           paths:
             - pal-tracker-*.tgz
+
 
   deployToReview:
     docker:
